@@ -17,15 +17,17 @@ locals {
 
 resource "aws_instance" "test_terraform" {
   #Recursos principales
-  #AMI que desplegará
-  ami           = "ami-0440d3b780d96b29d"
-  #Tipo de instancia
-  instance_type = "t2.micro"
-  #ID de la subnet
-  subnet_id = "subnet-002b64e875dc8ce87"
- 
-
-
+  
+  ami = "ami-0440d3b780d96b29d" #AMI que desplegará
+  instance_type = "t2.micro" #Tipo de instancia
+  subnet_id = "subnet-002b64e875dc8ce87" #ID de la subnet
+  vpc_security_group_ids = [
+    "sg-07761326d17d71a6b",
+    "sg-0d75970ad9cf93a0c",
+    "sg-0df20cd1992b2472b",
+    "sg-01adbaa8efd1fbdc3"
+    ] #Grupo de seguridad de la vpc ya creada
+  
   
   #Etiquetas de los recursos
   tags = {
