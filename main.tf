@@ -2,8 +2,9 @@
 
 provider "aws" {
 region     = "us-east-1"
-  access_key = "AKIAQHJYVYOTMO4J6GDP"
-  secret_key = "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"
+##pendiente por encriptar
+  access_key = var.access_key
+  secret_key = var.secret_key
 
 }
 
@@ -22,6 +23,9 @@ resource "aws_instance" "test_terraform" {
   instance_type = "t2.micro"
   #ID de la subnet
   subnet_id = "subnet-002b64e875dc8ce87"
+ 
+
+
   
   #Etiquetas de los recursos
   tags = {
@@ -35,4 +39,14 @@ resource "aws_instance" "test_terraform" {
             sudo systemctl enable nginx
             sudo systemctl start nginx
             EOF
+             
+ #definir volumen al recurso 
+ root_block_device {
+    volume_type           = "gp3"    # tipo de disco
+    volume_size           = 20       # Tamaño en GB
+    delete_on_termination = true     # Eliminar al destruir la instancia
+  tags = {
+    Name = "EC2-TEST-TERRAFORM"
+  }
+  }
 }
