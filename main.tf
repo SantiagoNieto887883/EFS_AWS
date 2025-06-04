@@ -49,4 +49,13 @@ resource "aws_instance" "test_terraform" {
     Name = "EC2-TEST-TERRAFORM"
   }
   }
+  ebs_block_device {
+    volume_type           = "gp3"    # tipo de disco
+    volume_size           = 10       # Tamaño en GB
+    device_name           = "/dev/xvdb" # Nombre del dispositivo para volumen de datos
+    delete_on_termination = true     # Eliminar al destruir la instancia
+  tags = {
+    Name = "EC2-TEST-TERRAFORM_VOLUMEN_DATOS"
+  }
+  }
 }
