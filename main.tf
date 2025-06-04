@@ -17,6 +17,7 @@ locals {
 
 resource "aws_instance" "test_terraform" {
   #Recursos principales
+  for_each = var.services_names
   
   ami = "ami-0440d3b780d96b29d" #AMI que desplegará
   instance_type = "t2.micro" #Tipo de instancia
@@ -31,7 +32,9 @@ resource "aws_instance" "test_terraform" {
   
   #Etiquetas de los recursos
   tags = {
-    Name = "EC2-TEST-TERRAFORM" }
+    extra_tag = local.extra_tag
+    Name = "EC2-${each.key}"
+     }
 
 
     #Datos de USER DATA (se usan para instalar al inicio de un server)
