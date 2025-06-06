@@ -16,3 +16,9 @@ variable "services_names" {
   description = "Nombre de los ec2"
   type        = set(string)
 }
+
+variable Intance_type {
+  type        = string
+  default     = ""
+  description = "description"
+}

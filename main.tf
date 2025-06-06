@@ -24,7 +24,7 @@ resource "aws_instance" "test_terraform" {
   for_each = var.services_names
   
   ami = "ami-08c988e452afb8d22" # DLM_policy-08082cc816954f750_i-059f41458936dcc54_05.01.2025T03.43.43.503 UTC
-  instance_type = "t3.large" #Tipo de instancia
+  instance_type = var.Intance_type #Tipo de instancia
   subnet_id = "subnet-18009d75" #ID de la subnet
   associate_public_ip_address = true #auto asignar ip publica
   vpc_security_group_ids = [
