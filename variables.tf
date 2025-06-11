@@ -45,3 +45,16 @@ variable key_name {
   default     = ""
   description = "description"
 }
+
+variable volume_type {
+  type        = string
+  default     = ""
+  description = "description"
+}
+
+variable volume_size {
+  type        = string
+  default     = ""
+  description = "description"
+}
+

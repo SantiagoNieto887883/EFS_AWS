@@ -1,25 +1,15 @@
-## provider ##
-
-provider "aws" {
-region     = "us-east-1"
-##pendiente por encriptar
-  access_key = var.access_key
-  secret_key = var.secret_key
-
-}
-
-
 locals {
   extra_tag = "extra-tag"
+  tag_test = "test_1"
 }
 
   #IAM ROLE
-  data "aws_iam_role" "test_terraform" {
+  data "aws_iam_role" "recurso_1" {
   name = "SSMServiceRole"
 }
 ## resource ##
 
-resource "aws_instance" "test_terraform" {
+resource "aws_instance" "recurso_1" {
   #Recursos principales
   for_each = var.services_names
   
@@ -31,31 +21,27 @@ resource "aws_instance" "test_terraform" {
   key_name = var.key_name
   
   #IAM ROL
-  iam_instance_profile = data.aws_iam_role.test_terraform.name
+  iam_instance_profile = data.aws_iam_role.recurso_1.name
   
-  #Etiquetas de los recursos
+  #Etiquetas de los EC2
   tags = {
     extra_tag = local.extra_tag
+    extra_tag = local.tag_test
     Name = "EC2-${each.key}"
      }
 
-    #Datos de USER DATA (se usan para instalar al inicio de un server)
-    #user_data = <<-EOF
-             #!/bin/bash
-     #       sudo yum install -y nginx
-      #      sudo systemctl enable nginx
-       #     sudo systemctl start nginx
-        #    EOF
+    
              
  #definir volumen al recurso 
  root_block_device {
-    volume_type           = "gp3"    # tipo de disco
-    volume_size           = 20       # Tamaño en GB
+    volume_type = var.volume_type    # tipo de disco
+    volume_size = var.volume_size       # Tamaño en GB
     delete_on_termination = true     # Eliminar al destruir la instancia
   tags = {
     Name = "Volumen-${each.key}"
   }
   }
+  # agregar volumen adicional
   #ebs_block_device {
    # volume_type           = "gp3"    # tipo de disco
     #volume_size           = 10       # Tamaño en GB
@@ -65,4 +51,12 @@ resource "aws_instance" "test_terraform" {
    # Name = "EC2-TEST-TERRAFORM_VOLUMEN_DATOS"
   #}
   #}
+
+  #Datos de USER DATA (se usan para instalar al inicio de un server)
+    user_data = <<-EOF
+             #!/bin/bash
+            sudo yum install -y nginx
+            sudo systemctl enable nginx
+            sudo systemctl start nginx
+            EOF
 }
