@@ -23,14 +23,12 @@ resource "aws_instance" "test_terraform" {
   #Recursos principales
   for_each = var.services_names
   
-  ami = "ami-08c988e452afb8d22" # DLM_policy-08082cc816954f750_i-059f41458936dcc54_05.01.2025T03.43.43.503 UTC
-  instance_type = var.Intance_type #Tipo de instancia
-  subnet_id = "subnet-18009d75" #ID de la subnet
+  ami = var.ami #ami que usa la instacia declarada en variables.tf
+  instance_type = var.Intance_type #Tipo de instancia declarada en variables.tf
+  subnet_id = var.subnet_id #ID de la subnet declarada en variables.tf
   associate_public_ip_address = true #auto asignar ip publica
-  vpc_security_group_ids = [
-    "sg-e0c93b8f" #Grupo de seguridad de la vpc ya creada
-    ] 
-  key_name = "SiteScope"
+  vpc_security_group_ids = var.Security_group #Grupo de seguridad de la vpc ya creada declarada en variables.tf
+  key_name = var.key_name
   
   #IAM ROL
   iam_instance_profile = data.aws_iam_role.test_terraform.name

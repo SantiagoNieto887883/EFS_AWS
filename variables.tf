@@ -22,3 +22,26 @@ variable Intance_type {
   default     = ""
   description = "description"
 }
+
+variable subnet_id {
+  type        = string
+  default     = ""
+  description = "description"
+}
+
+variable ami {
+  type        = string
+  default     = ""
+  description = "description"
+}
+
+variable Security_group {
+  type        = set (string)
+  description = "description"
+}
+
+variable key_name {
+  type        = string
+  default     = ""
+  description = "description"
+}
