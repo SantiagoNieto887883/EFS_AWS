@@ -5,7 +5,7 @@ locals {
 
   #IAM ROLE
   data "aws_iam_role" "recurso_1" {
-  name = "SSMServiceRole"
+  name = "SSM-EC2-ROLE"
 }
 ## resource ##
 
