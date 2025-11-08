@@ -1,9 +1,6 @@
-# Infraestructure-sample-AWS
-proyecto de ejemplo de infraestructura en AWS con escalabilidad, alta disponibilidad y seguridad con minimo privilegio
+# Infraestructure efs 2 puntos de acceso
 
-lea tambien
-
-https://github.com/SantiagoNieto887883/Infraestructure-sample-AWS/edit/main/documents/justificacion.docx
+proyecto de EFS de manera modulada en AWS
 
 ---
 
@@ -17,6 +14,16 @@ IAC/terraform/env/<env>/backend.tfvars
 IAC/terraform/env/<env>/terraform.tfvars
 ```
 
+-- contenido --
+
+bucket         = "tu bucket"
+key            = "tu ruta/terraform.tfstate"
+region         = "tu region"
+dynamodb_table = "tu tabla de dynamo"
+encrypt        = true
+profile = "tu perfil"
+
+---
 
 ## Comandos de despliegue
 
