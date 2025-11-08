@@ -16,13 +16,14 @@ IAC/terraform/env/<env>/terraform.tfvars
 
 -- contenido --
 
+```bash
 bucket         = "tu bucket"
 key            = "tu ruta/terraform.tfstate"
 region         = "tu region"
 dynamodb_table = "tu tabla de dynamo"
 encrypt        = true
 profile = "tu perfil"
-
+```
 ---
 
 ## Comandos de despliegue
