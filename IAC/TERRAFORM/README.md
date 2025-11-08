@@ -14,7 +14,7 @@ IAC/terraform/env/<env>/backend.tfvars
 IAC/terraform/env/<env>/terraform.tfvars
 ```
 
--- contenido --
+-- contenido backend--
 
 ```bash
 bucket         = "tu bucket"
