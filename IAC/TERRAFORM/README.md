@@ -26,13 +26,18 @@ profile = "tu perfil"
 ```
 ---
 
+# reconfigurar el backend en tu terraform (opcional)
+
+terraform init -reconfigure -backend-config=../../env/dev/backend.tfvars
+
 ## Comandos de despliegue
+
 
 # DEV
 ```bash
 cd IAC/terraform/live/dev
 terraform init -backend-config=../../env/dev/backend.tfvars
-terraform plan -var-file=../../env/dev/terraform.tfvars -out tfplan
+terraform plan -var-file=../../env/dev/terraform.tfvars -out tfplan 
 terraform apply tfplan
 ```
 
@@ -42,4 +47,12 @@ cd IAC/terraform/live/prod
 terraform init -backend-config=../../env/prod/backend.tfvars
 terraform plan -var-file=../../env/prod/terraform.tfvars -out tfplan
 terraform apply tfplan
+```
+
+# DESTRUYE
+
+```bash
+
+terraform destroy -var-file=../../env/dev/terraform.tfvars
+
 ```
