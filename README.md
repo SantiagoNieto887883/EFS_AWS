@@ -1,3 +1,5 @@
-# Terraform_v3
+# Terraform infraestructura
 
-# Para cada Recurso se debe definir el json, ejemplo uno para la intancia y otro para una llave publica y otro para un grupo de seguridad
+vea indicaciones en
+
+https://github.com/SantiagoNieto887883/Terraform_v3/tree/main/IAC/TERRAFORM
