@@ -14,7 +14,7 @@ IAC/terraform/env/<env>/backend.tfvars
 IAC/terraform/env/<env>/terraform.tfvars
 ```
 
--- contenido backend--
+-- contenido backend.tfvar--
 
 ```bash
 bucket         = "tu bucket"
@@ -22,8 +22,15 @@ key            = "tu ruta/terraform.tfstate"
 region         = "tu region"
 dynamodb_table = "tu tabla de dynamo"
 encrypt        = true
-profile = "tu perfil"
 ```
+
+-- contenido terraform.tfvars--
+
+```bash
+profile = "tu perfil"
+project = "tu proyecto"
+environment = "tu entorno"
+aws_region = "tu region"
 ---
 
 # reconfigurar el backend en tu terraform (opcional)
