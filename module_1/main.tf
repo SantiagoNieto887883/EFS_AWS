@@ -21,8 +21,8 @@ module "module_1_QA" {
 module "module_1_DEV" {
   source = "./module_1/EC2"
 
-  access_key     = "AKIAQHJYVYOTLTBJKS42"
-  secret_key     = "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"
+  access_key = var.access_key
+  secret_key = var.secret_key
   services_names = ["Servidor Proxy SITE24X7 v1"]
 
   #Diligenciar aqui los datos necesarios para levantar un server con VPC ya existente
