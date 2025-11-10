@@ -31,6 +31,7 @@ profile = "tu perfil"
 project = "tu proyecto"
 environment = "tu entorno"
 aws_region = "tu region"
+```
 ---
 
 # reconfigurar el backend en tu terraform (opcional)
