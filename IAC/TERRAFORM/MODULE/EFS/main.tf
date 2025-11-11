@@ -1,7 +1,7 @@
 resource "aws_efs_file_system" "wp" {
   encrypted = true
   tags = {
-    Name = "efs-wp"
+    Name = var.EFS_Name
   }
 }
 

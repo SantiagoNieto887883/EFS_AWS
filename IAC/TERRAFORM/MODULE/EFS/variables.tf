@@ -1,0 +1,1 @@
+variable "EFS_Name" { type = string}
