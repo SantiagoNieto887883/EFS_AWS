@@ -12,5 +12,7 @@ module "EFS" {
   source = "../../module/EFS"
 
   EFS_Name = var.EFS_Name
+  AP1_Name = var.AP1_Name
+  AP2_Name = var.AP2_Name
 
 }

@@ -6,6 +6,9 @@ resource "aws_efs_file_system" "wp" {
 }
 
 resource "aws_efs_access_point" "mysql_dev" {
+    tags = {
+    Name = var.AP1_Name
+  }
   file_system_id = aws_efs_file_system.wp.id
   posix_user {
     uid = 999
@@ -22,6 +25,9 @@ resource "aws_efs_access_point" "mysql_dev" {
 }
 
 resource "aws_efs_access_point" "mysql_preprod" {
+    tags = {
+    Name = var.AP2_Name
+  }
   file_system_id = aws_efs_file_system.wp.id
   posix_user {
     uid = 999
