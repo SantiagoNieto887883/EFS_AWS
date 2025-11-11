@@ -14,7 +14,7 @@ provider "aws" {
   region  = var.aws_region
   profile = var.profile
   #profile = "Proinnovate"
-  
+
 
   default_tags {
     tags = {
