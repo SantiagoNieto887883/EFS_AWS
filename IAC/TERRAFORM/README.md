@@ -1,4 +1,4 @@
-# Infraestructure efs 2 puntos de acceso
+# Infraestructura efs 2 puntos de acceso
 
 proyecto de EFS de manera modulada en AWS
 
