@@ -9,11 +9,11 @@
 Debes autenticarte con tus credenciales de AWS (SSO o Secret key, access key)
 
 ```bash
-aws configure --profile
+aws configure --profile <tu perfil>
 
 o
 
-aws configure sso --profile
+aws configure sso --profile <tu perfil>
 
 ```
 
