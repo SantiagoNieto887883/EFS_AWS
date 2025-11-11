@@ -8,7 +8,9 @@ output "aws_account_id" {
 
 # referencia de modulos
 
-module EFS {
+module "EFS" {
   source = "../../module/EFS"
+
+  EFS_Name = var.EFS_Name
 
 }
