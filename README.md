@@ -1,5 +1,9 @@
 # Antes de inciar
 
+** Instala AWS CLI
+
+** Instala terraform
+
 Debes autenticarte con tus credenciales de AWS (SSO o Secret key, access key)
 
 ```bash
