@@ -3,6 +3,9 @@ resource "aws_efs_file_system" "wp" {
   tags = {
     Name = var.EFS_Name
   }
+    lifecycle_policy {
+    transition_to_ia = "AFTER_30_DAYS"
+  }
 }
 
 resource "aws_efs_access_point" "mysql_dev" {
