@@ -4,6 +4,8 @@
 
 ** Instala terraform
 
+# Luego
+
 Debes autenticarte con tus credenciales de AWS (SSO o Secret key, access key)
 
 ```bash
