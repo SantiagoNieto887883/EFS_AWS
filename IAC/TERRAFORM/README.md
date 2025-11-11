@@ -17,6 +17,9 @@ IAC/terraform/env/<env>/terraform.tfvars
 -- contenido backend.tfvar--
 
 ```bash
+#autenticación
+profile = "tu perfil"
+
 bucket         = "tu bucket"
 key            = "tu ruta/terraform.tfstate"
 region         = "tu region"
@@ -27,10 +30,16 @@ encrypt        = true
 -- contenido terraform.tfvars--
 
 ```bash
+#autenticación
 profile = "tu perfil"
+
 project = "tu proyecto"
 environment = "tu entorno"
 aws_region = "tu region"
+
+# EFS
+EFS_Name = "wp_efs_1234"
+
 ```
 ---
 
@@ -45,7 +54,7 @@ terraform init -reconfigure -backend-config=../../env/dev/backend.tfvars
 ```bash
 cd IAC/terraform/live/dev
 terraform init -backend-config=../../env/dev/backend.tfvars
-terraform plan -var-file=../../env/dev/terraform.tfvars -out tfplan 
+terraform plan -var-file=../../env/dev/terraform.tfvars -out tfplan
 terraform apply tfplan
 ```
 
