@@ -38,8 +38,9 @@ environment = "tu entorno"
 aws_region = "tu region"
 
 # EFS
-EFS_Name = "wp_efs_1234"
-
+EFS_Name = "Tu nombre EFS"
+AP1_Name = "Access point 1"
+AP2_Name = "Access point 2"
 ```
 ---
 
