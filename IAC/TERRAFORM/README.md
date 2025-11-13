@@ -41,6 +41,9 @@ aws_region = "tu region"
 EFS_Name = "Tu nombre EFS"
 AP1_Name = "Access point 1"
 AP2_Name = "Access point 2"
+
+root_directory_1 = "/tu path"
+root_directory_2 = "/tu path"
 ```
 ---
 
