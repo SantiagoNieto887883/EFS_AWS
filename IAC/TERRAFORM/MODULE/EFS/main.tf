@@ -18,7 +18,7 @@ resource "aws_efs_access_point" "mysql_dev" {
     gid = 999
   }
   root_directory {
-    path = "/mysql/dev"
+    path = var.root_directory_1
     creation_info {
       owner_uid   = 999
       owner_gid   = 999
@@ -37,7 +37,7 @@ resource "aws_efs_access_point" "mysql_preprod" {
     gid = 999
   }
   root_directory {
-    path = "/mysql/preprod"
+    path = var.root_directory_2
     creation_info {
       owner_uid   = 999
       owner_gid   = 999

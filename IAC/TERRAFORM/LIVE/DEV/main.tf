@@ -14,5 +14,7 @@ module "EFS" {
   EFS_Name = var.EFS_Name
   AP1_Name = var.AP1_Name
   AP2_Name = var.AP2_Name
+  root_directory_1 = var.root_directory_1
+  root_directory_2 = var.root_directory_2
 
 }
